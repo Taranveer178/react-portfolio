@@ -1,7 +1,7 @@
 // src/components/Experience.jsx
-import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import { useState } from "react";
 
 const framerEase = [0.16, 1, 0.3, 1];
 
@@ -42,39 +42,13 @@ const itemVariants = {
 
 const experiences = [
   {
-    role: "Frontend Engineer — Paystack",
-    period: "2023 — Present",
+    role: "Developer Approach",
+    period: "Taranveer Singh",
     highlights: [
-      "Built and maintained responsive user interfaces using modern JavaScript frameworks",
-      "Collaborated with designers to deliver clean, user-focused experiences",
-      "Optimized performance and improved page load times across key products",
-    ],
-  },
-  {
-    role: "Frontend Engineer — Hubtel",
-    period: "2022 — 2023",
-    highlights: [
-      "Architected reusable React and TypeScript component libraries for merchant checkout flows",
-      "Integrated real-time payment status updates and accessible form validation across web apps",
-      "Reduced bundle sizes and improved Core Web Vitals on high-traffic customer portals",
-    ],
-  },
-  {
-    role: "UI Engineer — Meta",
-    period: "2021 — 2022",
-    highlights: [
-      "Developed interactive design system primitives with strict keyboard and screen-reader support",
-      "Partnered with product designers to prototype fluid micro-interactions and layout transitions",
-      "Streamlined frontend build pipelines and automated visual regression testing",
-    ],
-  },
-  {
-    role: "Frontend Lead — Google",
-    period: "2020 — 2021",
-    highlights: [
-      "Led a cross-functional frontend team shipping internal analytics and developer tooling dashboards",
-      "Established code quality standards, performance budgets, and modular state architecture",
-      "Mentored junior engineers through architecture reviews and hands-on pair programming",
+      "I’m a developer who enjoys creating practical digital solutions through code.",
+      "I believe technology is most valuable when it solves real problems, and I enjoy taking ideas from concept to reality.",
+      "I work across modern frontend technologies and backend services, continuously learning and improving.",
+      "My focus is on clean code, intuitive interfaces, and applications that are useful, reliable, and scalable.",
     ],
   },
 ];
@@ -87,7 +61,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="w-full bg-[#000000] py-20 md:py-28">
+    <section id="about" className="w-full bg-[#000000] py-20 md:py-28">
       <div className="mx-auto max-w-[780px] px-6 md:px-10">
         {/* Centered Section Header */}
         <motion.div
@@ -98,15 +72,16 @@ export default function Experience() {
           className="mb-14 flex flex-col items-center text-center"
         >
           <span className="mb-4 inline-flex items-center rounded-full border border-white/[0.06] bg-[#141414] px-3.5 py-1.5 text-[10.5px] font-medium uppercase tracking-[0.14em] text-[#9CA3AF]">
-            EXPERIENCE
+            ABOUT
           </span>
 
           <h2 className="mb-3.5 text-[32px] font-light leading-[1.2] tracking-[-0.025em] text-white sm:text-[38px]">
-            Where I&apos;ve Worked
+            About Me
           </h2>
 
           <p className="max-w-[360px] text-[14.5px] font-normal leading-[1.6] text-[#9CA3AF] sm:text-[15px]">
-            A summary of my professional journey and the impact I&apos;ve made
+            Building useful solutions through code, curiosity, and continuous
+            improvement.
           </p>
         </motion.div>
 
@@ -189,27 +164,6 @@ export default function Experience() {
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Bottom Centered Download CV Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: framerEase }}
-          className="mt-10 flex justify-center"
-        >
-          <motion.a
-            href="/cv.pdf"
-            download
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.2, ease: framerEase }}
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13.5px] font-semibold text-black transition-colors duration-200 hover:bg-neutral-200"
-          >
-            <span>Download My CV</span>
-            <ArrowRight className="h-4 w-4 stroke-[2] transition-transform duration-200 group-hover:translate-x-0.5" />
-          </motion.a>
         </motion.div>
       </div>
     </section>

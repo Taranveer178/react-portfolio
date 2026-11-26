@@ -1,5 +1,4 @@
 // src/components/Projects.jsx
-import React from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
@@ -47,44 +46,36 @@ const cardVariants = {
 
 const projects = [
   {
-    title: "CloudDesk",
+    title: "RoomSplit",
+    category: "Expense Management Application",
     description:
-      "A modern dashboard interface designed to help teams manage tasks, track progress, and collaborate seamlessly in real time.",
-    image:
-      "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=1000&q=85",
-    imageAlt: "CloudDesk Tablet Interface Mockup",
-    sourceUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "RoomSplit simplifies shared expense management for people living together. It helps groups track balances, split bills, communicate, and stay updated in real time.",
+    tags: ["React", "Vite", "Capacitor", "Firebase", "Firestore"],
+    liveUrl: "https://roomsplit.taranveer.in/",
   },
   {
-    title: "Matcha Haven",
+    title: "Glam By Anmi",
+    category: "Business Website / Web Development",
     description:
-      "A clean, calming website for a matcha brand, designed to showcase products, tell the brand story, and create a smooth, delightful shopping experience.",
-    image:
-      "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1000&q=85",
-    imageAlt: "Matcha Haven Glass Mockup",
-    sourceUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "A modern website for a beauty and nail studio that showcases services, displays work, and helps customers connect and make booking inquiries.",
+    tags: ["React", "Vite", "HTML", "CSS", "JavaScript"],
+    liveUrl: "https://glambyanmi.in/",
   },
   {
-    title: "Veloce Studio",
+    title: "ShareBills",
+    category: "Collaborative Web Application",
     description:
-      "An editorial portfolio and booking platform crafted for a boutique design studio, featuring fluid page transitions and interactive case studies.",
-    image:
-      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1000&q=85",
-    imageAlt: "Veloce Studio Print and Web Mockup",
-    sourceUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "A collaborative project developed with Sushant Monga to make software that helps people manage and share bills more effectively.",
+    tags: ["Web Application"],
+    liveUrl: "https://sharebills.in/",
   },
   {
-    title: "PulsePay Mobile",
+    title: "Portfolio Website",
+    category: "Personal Branding / Web Development",
     description:
-      "A sleek fintech web and mobile companion built for instant peer-to-peer transfers, smart spending analytics, and multi-currency tracking.",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=85",
-    imageAlt: "PulsePay Mobile App Mockup",
-    sourceUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "My personal developer portfolio, showcasing selected projects, technical interests, skills, and a clear approach to building real-world applications.",
+    tags: ["React", "Vite", "Motion", "Tailwind CSS"],
+    liveUrl: "https://taranveer.in",
   },
 ];
 
@@ -105,12 +96,11 @@ export default function Projects() {
           </span>
 
           <h2 className="mb-3.5 text-[32px] font-light leading-[1.2] tracking-[-0.025em] text-white sm:text-[38px]">
-            Projects I&apos;ve Shipped
+            Featured Projects
           </h2>
 
           <p className="max-w-[390px] text-[14.5px] font-normal leading-[1.6] text-[#9CA3AF] sm:text-[15px]">
-            A range of projects demonstrating how I turn ideas into functional
-            experiences
+            Real applications and websites built around practical ideas and useful experiences.
           </p>
         </motion.div>
 
@@ -134,40 +124,28 @@ export default function Projects() {
               className="group flex flex-col justify-between rounded-[24px] border border-white/[0.06] bg-[#121212] p-5 transition-colors duration-300 sm:p-6"
             >
               <div>
-                {/* Rounded Inner Image Frame */}
-                <div className="relative mb-6 aspect-[16/10.5] w-full overflow-hidden rounded-[16px] bg-[#1A1A1A]">
-                  <img
-                    src={project.image}
-                    alt={project.imageAlt}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  />
+                <div className="relative mb-6 aspect-[16/10.5] w-full overflow-hidden rounded-[16px] border border-white/[0.05] bg-[radial-gradient(circle_at_top_right,#252525_0%,#171717_48%,#101010_100%)]">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-[28px] font-light tracking-[-0.04em] text-white/90 sm:text-[34px]">{project.title}</span>
+                  </div>
                 </div>
 
-                {/* Project Title */}
+                <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#777D87]">{project.category}</p>
                 <h3 className="mb-2.5 text-[20px] font-normal tracking-[-0.015em] text-white sm:text-[22px]">
                   {project.title}
                 </h3>
 
-                {/* Project Description */}
-                <p className="mb-7 text-[14px] font-normal leading-[1.65] text-[#9CA3AF] sm:text-[14.5px]">
+                <p className="mb-5 text-[14px] font-normal leading-[1.65] text-[#9CA3AF] sm:text-[14.5px]">
                   {project.description}
                 </p>
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-1 text-[11.5px] text-[#C7C9CE]">{tag}</span>
+                  ))}
+                </div>
               </div>
 
-              {/* Action Buttons Row */}
               <div className="flex flex-wrap items-center gap-3.5 pt-1">
-                <motion.a
-                  href={project.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.2, ease: framerEase }}
-                  className="inline-flex items-center justify-center rounded-full border border-white/35 bg-transparent px-5 py-2.5 text-[13px] font-medium text-white transition-colors duration-200 hover:border-white hover:bg-white/[0.06]"
-                >
-                  Source Code
-                </motion.a>
-
                 <motion.a
                   href={project.liveUrl}
                   target="_blank"

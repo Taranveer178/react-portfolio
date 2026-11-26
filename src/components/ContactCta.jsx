@@ -1,5 +1,4 @@
 // src/components/ContactCta.jsx
-import React from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
@@ -57,14 +56,12 @@ export default function ContactCta() {
           className="relative flex min-h-[360px] w-full flex-col items-center justify-center overflow-hidden rounded-[24px] border border-white/[0.08] px-6 py-16 text-center sm:min-h-[410px]"
         >
           {/* Background Studio Collaboration Image */}
-          <motion.img
+          <motion.div
             initial={{ scale: 1.08 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: framerEase }}
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=85"
-            alt="Team collaborating on laptops"
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12),transparent_32%),radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.08),transparent_30%),#111111]"
           />
 
           {/* Warm Dark Atmospheric Overlay */}
@@ -88,25 +85,27 @@ export default function ContactCta() {
               variants={fadeUpVariants}
               className="mb-3.5 text-[30px] font-light leading-[1.2] tracking-[-0.025em] text-white sm:text-[38px]"
             >
-              Let&apos;s Build Something Great
+              Have an Idea? Let&apos;s Build Something Together.
             </motion.h2>
 
             <motion.p
               variants={fadeUpVariants}
-              className="mb-8 max-w-[340px] text-[14.5px] font-normal leading-[1.6] text-[#D1D5DB] sm:text-[15.5px]"
+              className="mb-8 max-w-[420px] text-[14.5px] font-normal leading-[1.6] text-[#D1D5DB] sm:text-[15.5px]"
             >
-              Let&apos;s bring your ideas to life with thoughtful design and code
+              I&apos;m always interested in connecting with people, discussing
+              innovative ideas, and exploring opportunities to build something
+              meaningful.
             </motion.p>
 
             <motion.div variants={fadeUpVariants}>
               <motion.a
-                href="mailto:hello@snilloc.dev"
+                href="mailto:staranveer178@gmail.com"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2, ease: framerEase }}
                 className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13.5px] font-semibold text-black transition-colors duration-200 hover:bg-neutral-200"
               >
-                <span>Contact Me</span>
+                <span>Get in Touch</span>
                 <ArrowRight className="h-4 w-4 stroke-[2] transition-transform duration-200 group-hover:translate-x-0.5" />
               </motion.a>
             </motion.div>
