@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --bg-amoled: #000000;
+  --surface-card: #121212;
+  --surface-pill: #141414;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-button: rgba(255, 255, 255, 0.35);
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-amoled);
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-tech-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 18s linear infinite;
+}
+
+.animate-tech-marquee:hover {
+  animation-play-state: paused;
+}
